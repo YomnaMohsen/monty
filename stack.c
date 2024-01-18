@@ -56,12 +56,10 @@ void _nop(stack_t **stack, unsigned int line_number)
 */
 void _pint(stack_t **stack, unsigned int line_number)
 {
-	if(!(*stack) || (!stack))
+	if (!(*stack) || (!stack))
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		free(list_args.line);
-		free_stack(stack);
-		fclose(list_args.f);
+		free_all(stack);
 	}
 	printf("%d\n", (*stack)->n);
 }
@@ -87,5 +85,5 @@ void _pop(stack_t **stack, unsigned int line_number)
 		tmp->prev = NULL;
 	}
 	free(*stack);
-	*stack= tmp;
+	*stack = tmp;
 }

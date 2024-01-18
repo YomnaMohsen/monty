@@ -12,9 +12,7 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		free_stack(head);
-		free(list_args.line);
-		fclose(list_args.f);
+		free_all(head);
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
@@ -55,4 +53,20 @@ void print_stack(const stack_t *h)
 		printf("%d\n", h->n);
 		h = h->next;
 	}
+}
+/**
+* stkint_len - prints all elemnets in list
+* @h: pointer to dlinkedlist node
+* Return: int count
+*/
+size_t stkint_len(const stack_t *h)
+{
+	size_t count = 0;
+
+	while (h)
+	{
+		h = h->next;
+		count++;
+	}
+	return (count);
 }
