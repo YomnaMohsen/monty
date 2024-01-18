@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 	{
 		free(list_args.line);
 	}
-	
+
 	free_stack(&st);
 	fclose(fp);
 	return (exit_status);
