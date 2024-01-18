@@ -43,4 +43,16 @@ void  free_stack(stack_t **h)
 	}
 	*h = curr;
 }
-
+/**
+* print_stack - prints all elemnets in stack
+* @h: pointer to top of stack
+* Return: Nothing
+*/
+void print_stack(const stack_t *h)
+{
+	while (h)
+	{
+		printf("%d\n", h->n);
+		h = h->next;
+	}
+}

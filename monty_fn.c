@@ -16,6 +16,7 @@ void (*get_func(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"push", _push},
 		{"pall", _pall},
 		{"nop", _nop},
+		{"pint", _pint},
 		{ NULL, NULL}
 	};
 	for (j = 0; opcodes[j].f; j++)
@@ -57,7 +58,7 @@ int parse_string(FILE *fp, stack_t **s)
 		f = get_func(list_args.arg1);
 		if (f == NULL)
 		{
-			fprintf(stderr, "L %d: unknown instruction %s", line_num, list_args.arg1);
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_num, list_args.arg1);
 			return (EXIT_FAILURE);
 		}
 		f(s, line_num);
