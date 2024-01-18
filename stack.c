@@ -60,6 +60,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		free(list_args.line);
+		free_stack(stack);
 		fclose(list_args.f);
 	}
 	printf("%d\n", (*stack)->n);
