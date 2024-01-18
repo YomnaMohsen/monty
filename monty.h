@@ -62,4 +62,5 @@ stack_t  *add_dnodeint(stack_t **head, const int n);
 void  free_stack(stack_t **h);
 void print_stack(const stack_t *h);
 void int_err(int line_number);
+int is_num(char *str);
 #endif
