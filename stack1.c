@@ -40,7 +40,7 @@ void _sub(stack_t **stack, unsigned int line_number)
 		free_all(stack);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n += (*stack)->n;
+	(*stack)->next->n -= (*stack)->n;
 	tmp = (*stack)->next;
 	if (tmp != NULL)
 	{
