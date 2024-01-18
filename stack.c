@@ -16,11 +16,11 @@ void _push(stack_t **stack, unsigned int line_number)
 			n = atoi(list_args.arg2);
 		}
 		else
-			int_err(line_number);
+			int_err(line_number, stack);
 	}
 	else
 	{
-		int_err(line_number);
+		int_err(line_number, stack);
 	}
 	add_dnodeint(stack, n);
 }
@@ -64,4 +64,28 @@ void _pint(stack_t **stack, unsigned int line_number)
 		fclose(list_args.f);
 	}
 	printf("%d\n", (*stack)->n);
+}
+/**
+*_pop - removes element at top of stack
+*@stack: pointer to top of stack
+*@line_number: line number of instruction
+*Return: Nothing
+*/
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
+
+	tmp = *stack;
+	if (!(*stack) || !(stack))
+	{
+		pop_err(line_number, stack);
+
+	}
+	tmp = (*stack)->next;
+	if (tmp != NULL)
+	{
+		tmp->prev = NULL;
+	}
+	free(*stack);
+	*stack= tmp;
 }

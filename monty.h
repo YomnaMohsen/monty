@@ -68,6 +68,7 @@ void _nop(stack_t **stack, unsigned int line_number);
 stack_t  *add_dnodeint(stack_t **head, const int n);
 void  free_stack(stack_t **h);
 void print_stack(const stack_t *h);
-void int_err(int line_number);
+void int_err(int line_number, stack_t **s);
+void pop_err(int line_number, stack_t **s);
 int is_num(char *str);
 #endif
