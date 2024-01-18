@@ -1,14 +1,18 @@
 #include "monty.h"
-#include <stdio.h>
+
 list_t list_args = {NULL, NULL, NULL, NULL}; /*define extern variable*/
 /**
- *
+ *main - main function
+ *@argc: number of args
+ *@argv: array of args
+ *Return: int 1 if success - otherwise 0
  */
 int main(int argc, char **argv)
 {
 	FILE *fp = NULL;
 	int exit_status;
 	stack_t *st = NULL;
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");

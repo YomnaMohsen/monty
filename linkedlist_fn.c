@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+* add_dnodeint - add  elemnets at head of  list
+* @head: adress of  pointer to dlinkedlist node
+* @n:int value added to head of dlinkedlist
+* Return: pointer to struct node in case of success, or null
+*/
 stack_t *add_dnodeint(stack_t **head, const int n)
 {
 	stack_t *new;
@@ -17,16 +22,15 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	*head = new;
 	return (new);
 }
-
 /**
-* free_dlistint -  elemnets in dlinked list
+* free_stack - elemnets in dlinked list
 * @h: pointer to dlinkedlist node
 * Return: Nothing
 */
 void  free_stack(stack_t **h)
 {
-	stack_t *tmp= NULL, *curr = *h;
-	
+	stack_t *tmp = NULL, *curr = *h;
+
 	while (curr)
 	{
 		tmp = curr->next;
