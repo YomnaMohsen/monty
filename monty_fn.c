@@ -19,6 +19,7 @@ void (*get_func(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"add", _add},
+		{"sub", _sub},
 		{ NULL, NULL}
 	};
 	for (j = 0; opcodes[j].f; j++)

@@ -66,6 +66,7 @@ void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
+void _sub(stack_t **stack, unsigned int line_number);
 stack_t  *add_dnodeint(stack_t **head, const int n);
 size_t stkint_len(const stack_t *h);
 void  free_stack(stack_t **h);
