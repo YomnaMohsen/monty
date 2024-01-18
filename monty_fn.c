@@ -15,6 +15,7 @@ void (*get_func(char *opcode))(stack_t **stack, unsigned int line_number)
 	instruction_t opcodes[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"nop", _nop},
 		{ NULL, NULL}
 	};
 	for (j = 0; opcodes[j].f; j++)
@@ -50,7 +51,8 @@ int parse_string(FILE *fp, stack_t **s)
 		list_args.arg2 = strtok(NULL, delim);
 		if (list_args.arg1[0] == '#')
 		{
-			continue;
+			_nop(s, line_num);
+			return (0);
 		}
 		f = get_func(list_args.arg1);
 		if (f == NULL)

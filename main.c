@@ -26,7 +26,11 @@ int main(int argc, char **argv)
 	}
 	list_args.f = fp;
 	exit_status = parse_string(list_args.f, &st);
-	free(list_args.line);
+	if ((list_args.line))
+	{
+		free(list_args.line);
+	}
+	
 	free_stack(&st);
 	fclose(fp);
 	return (exit_status);

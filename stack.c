@@ -49,3 +49,14 @@ void print_stack(const stack_t *h)
 		h = h->next;
 	}
 }
+/**
+*_nop - no operation
+*@stack: pointer to top of stack
+*@line_number: line number of instruction
+*Return: Nothing
+*/
+void _nop(stack_t **stack, unsigned int line_number)
+{
+	(void) stack;
+	(void) line_number;
+}
