@@ -43,6 +43,10 @@ int parse_string(FILE *fp, stack_t **s)
 		}
 		list_args.arg1 = strtok(list_args.line, delim);
 		list_args.arg2 = strtok(NULL, delim);
+		if (list_args.arg1[0] == '#')
+		{
+			continue;
+		}
 		f = get_func(list_args.arg1);
 		if (f == NULL)
 		{
@@ -75,4 +79,19 @@ int check_empty(char *line)
 		}
 	}
 	return 1;
+}
+int is_num(char *str)
+{
+	int i = 0;
+
+	if (str[0] == '-')
+		i++;
+	for (i = 1; str[i]; i++)
+	{
+		if (str[i] < '0' || str[i] >'9')
+		{
+			return (0);
+		}	
+	}
+	return (1);
 }

@@ -5,15 +5,19 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
     int n;
-    if (list_args.arg2 == NULL)
+    if (list_args.arg2)
+    {
+        if (is_num(list_args.arg2))
+        {
+            n = atoi(list_args.arg2);
+        }
+        else
+        int_err(line_number);
+    }
+    else
     {
         int_err(line_number);
     }
-    if (atoi(list_args.arg2) == 0 && list_args.arg2[0] != '0')
-    {
-        int_err(line_number);
-    }
-    n = atoi(list_args.arg2);
     add_dnodeint(stack, n);
 }
 /**
@@ -25,8 +29,7 @@ void _push(stack_t **stack, unsigned int line_number)
 void _pall(stack_t **stack, unsigned int line_number)
 {
     (void) line_number;
-    print_stack(*stack);
-    
+    print_stack(*stack);    
 }
 /**
 * print_stack - prints all elemnets in stack
@@ -38,6 +41,6 @@ void print_stack(const stack_t *h)
     while (h)
 	{
 		printf("%d\n", h->n);
-		h = h->next;
+        h = h->next;
 	}
 }
