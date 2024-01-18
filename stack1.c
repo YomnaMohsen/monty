@@ -21,6 +21,6 @@ void _add(stack_t **stack, unsigned int line_number)
 	{
 		tmp->prev = NULL;
 	}
-	free_stack(stack);
+	free(*stack);
 	*stack = tmp;
 }
