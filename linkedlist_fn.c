@@ -32,6 +32,7 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 void  free_stack(stack_t **h)
 {
 	stack_t *tmp = NULL, *curr = *h;
+	
 	if (!(curr))
 	{
 		return;

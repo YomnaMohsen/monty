@@ -8,7 +8,7 @@
 void int_err(int line_number, stack_t **s)
 {
 	(void) s;
-	
+
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
 /*	free_all(s);*/
 	exit(EXIT_FAILURE);
