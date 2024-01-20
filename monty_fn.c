@@ -59,8 +59,7 @@ int parse_string(FILE *fp, stack_t **s)
 		list_args.arg2 = strtok(NULL, delim);
 		if (list_args.arg1[0] == '#')
 		{
-			_nop(s, line_num);
-			return (0);
+			continue;
 		}
 		f = get_func(list_args.arg1);
 		if (f == NULL)
