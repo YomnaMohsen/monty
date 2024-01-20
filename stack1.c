@@ -66,7 +66,6 @@ void _swap(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	tmp = (*stack)->n;
-	printf("first, next %d%d\n", (*stack)->n,(*stack)->next->n);
 	(*stack)->n = (*stack)->next->n;
 	(*stack)->next->n = tmp;
 }
