@@ -24,6 +24,7 @@ void (*get_func(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"div", _div},
 		{"mod", _mod},
 		{"swap", _swap},
+		{"pchar", _pchar},
 		{ NULL, NULL}
 	};
 	for (j = 0; opcodes[j].f; j++)

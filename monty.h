@@ -71,6 +71,7 @@ void _mul(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
+void _pchar(stack_t **stack, unsigned int line_number);
 stack_t  *add_dnodeint(stack_t **head, const int n);
 size_t stkint_len(const stack_t *h);
 void  free_stack(stack_t **h);
