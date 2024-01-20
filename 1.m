@@ -1,4 +1,3 @@
-push 98
-push 402
-swap Holberton
-pall
+push 12
+push 0
+div
