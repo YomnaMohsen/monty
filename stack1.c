@@ -57,15 +57,16 @@ void _sub(stack_t **stack, unsigned int line_number)
 */
 void _swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp;
+	int tmp;
 
-	if ((stkint_len(*stack)) < 2 || !(stack) || !(*stack))
+	if ((stkint_len(*stack)) < 2)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		free_all(stack);
 		exit(EXIT_FAILURE);
 	}
-	tmp = (*stack);
+	tmp = (*stack)->n;
+	printf("first, next %d%d\n", (*stack)->n,(*stack)->next->n);
 	(*stack)->n = (*stack)->next->n;
-	(*stack)->next->n = tmp->n;
+	(*stack)->next->n = tmp;
 }
